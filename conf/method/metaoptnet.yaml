@@ -1,0 +1,12 @@
+defaults:
+  - meta_base
+n_task: 8
+enabled_scale: False
+base_learner: 'Ridge'
+cls:
+  _target_: methods.metaoptnet.MetaOptNet
+  n_task: ${method.n_task}
+  enabled_scale: ${method.enabled_scale}
+  base_learner: ${method.base_learner}
+
+name: metaoptnet
